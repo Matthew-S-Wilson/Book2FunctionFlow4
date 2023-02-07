@@ -1,0 +1,49 @@
+const buyClay = () => {
+newClayObject = { }
+return newClayObject
+}
+const newPot = buyClay()
+console.log(newPot)
+
+const makePottery = (buyClay) => {
+buyClay.shape = "Bowl"
+return buyClay
+}
+const potShape = makePottery(newPot)
+console.log(potShape)
+
+const bisqueFire = (makePottery) => {
+makePottery.readyForGlazing = true
+return makePottery
+}
+const firedTrue = bisqueFire(potShape)
+console.log(firedTrue)
+
+const glazePottery = (bisqueFire) => {
+if (bisqueFire.readyForGlazing === true ){
+    bisqueFire.glazing = "Midnight Blue"
+    return bisqueFire
+}
+else{
+    
+    return ["Make sure you bisque fire the pottery before you glaze it."]
+}
+}
+const glazedPot = glazePottery(firedTrue)
+console.log(glazedPot)
+
+const finalFiring = (glazePottery, temp) => {
+if (temp > 1200){
+    glazePottery.cracked = true
+    return glazePottery
+}
+else{ glazePottery.cracked = false
+return glazePottery
+}
+}
+
+const finalTest1400 = finalFiring(glazedPot, 1400)
+console.log(finalTest1400)
+
+const finalTest1200 = finalFiring(glazedPot, 1200)
+console.log(finalTest1200)
